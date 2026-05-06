@@ -498,6 +498,138 @@
   .dl-opt-label { font-size: 0.8rem; font-weight: 500; color: var(--ink); }
   .dl-opt-desc { font-size: 0.68rem; color: rgba(26,26,46,0.4); margin-top: 2px; }
 
+  /* ── CONTENT SECTION (SEO) ── */
+  .content-section {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto 56px;
+    padding: 0 24px;
+  }
+
+  .content-section-kicker {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 12px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .content-lead {
+    font-size: 1.05rem;
+    color: rgba(26,26,46,0.62);
+    line-height: 1.75;
+    max-width: 52rem;
+    margin-bottom: 36px;
+  }
+
+  .content-block {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px 26px 30px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+
+  .content-block:last-child {
+    margin-bottom: 0;
+  }
+
+  .content-block h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.25rem, 3vw, 1.55rem);
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 14px;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+
+  .content-block p {
+    font-size: 0.92rem;
+    color: rgba(26,26,46,0.58);
+    line-height: 1.75;
+    margin-bottom: 12px;
+  }
+
+  .content-block p:last-child {
+    margin-bottom: 0;
+  }
+
+  .content-steps {
+    margin: 16px 0 0;
+    padding-left: 1.25rem;
+    font-size: 0.92rem;
+    color: rgba(26,26,46,0.58);
+    line-height: 1.7;
+  }
+
+  .content-steps li {
+    margin-bottom: 12px;
+    padding-left: 4px;
+  }
+
+  .content-steps li:last-child {
+    margin-bottom: 0;
+  }
+
+  .content-steps strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* ── FAQ ── */
+  .faq-section {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto 56px;
+    padding: 0 24px;
+  }
+
+  .faq-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.35rem, 3.2vw, 1.75rem);
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 22px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .faq-item {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px 22px 22px;
+    box-shadow: 0 4px 24px rgba(26,26,46,0.06);
+  }
+
+  .faq-item h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 10px;
+    line-height: 1.35;
+  }
+
+  .faq-item p {
+    font-size: 0.88rem;
+    color: rgba(26,26,46,0.58);
+    line-height: 1.7;
+    margin: 0;
+  }
+
   /* ── FEATURES ROW ── */
   .features {
     position: relative;
@@ -595,6 +727,10 @@
     header { padding: 16px 20px; }
     .panels { padding: 20px; }
     .hero { padding: 40px 20px 32px; }
+    .content-section { margin-bottom: 48px; }
+    .content-block { padding: 22px 18px 24px; }
+    .faq-section { margin-bottom: 48px; }
+    .faq-item { padding: 18px 16px 20px; }
     footer { padding: 24px 20px; flex-direction: column; gap: 12px; text-align: center; }
     .draw-toolbar { gap: 14px; }
   }

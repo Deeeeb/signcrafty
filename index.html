@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SignCrafty – Free Online Signature Maker</title>
+<title>Free Online Signature Maker | Draw, Type & Download | SignCrafty</title>
 <meta name="description" content="Create your perfect digital signature for free. Draw, type, or upload. Download as PNG instantly. No signup required.">
 <meta name="keywords" content="signature maker, digital signature, online signature, free signature, PNG signature, SVG signature, typed signature, e-signature image">
 <meta name="author" content="SignCrafty">
@@ -14,13 +14,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="SignCrafty – Free Online Signature Maker">
+<meta property="og:title" content="Free Online Signature Maker | Draw, Type & Download | SignCrafty">
 <meta property="og:description" content="Create your perfect digital signature for free. Draw, type, or choose a style. Download as PNG, JPG, or SVG instantly. No signup required.">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="SignCrafty">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SignCrafty – Free Online Signature Maker">
+<meta name="twitter:title" content="Free Online Signature Maker | Draw, Type & Download | SignCrafty">
 <meta name="twitter:description" content="Create your perfect digital signature for free. Draw, type, or choose a style. Download instantly — no signup.">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@400;600;700&family=Great+Vibes&family=Pinyon+Script&family=Parisienne&display=swap" rel="stylesheet">
@@ -43,6 +43,55 @@
 }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is SignCrafty free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. SignCrafty is free to use with no signup required and no hidden fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is SignCrafty safe? Is my signature stored on your servers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your signature is processed in your browser. SignCrafty does not upload your signature to our servers for storage. Downloads are generated locally on your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What image formats can I download?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can download PNG (transparent or white background), JPG (white background), and SVG when you draw your signature (vector format)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to create an account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. You can create and download a signature without registering."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a signature image the same as a legally binding e-signature?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SignCrafty creates a signature image for documents, email, and design use. It is not the same as a regulated electronic signature service used for legal contracts; check your document requirements."
+      }
+    }
+  ]
+}
+</script>
+
 <script src="main.js" defer></script>
 </head>
 <body>
@@ -60,7 +109,7 @@
 <!-- HERO -->
 <section class="hero" aria-labelledby="hero-heading">
   <div class="hero-eyebrow">Online Signature Maker</div>
-  <h1 id="hero-heading">Your signature,<br><em>beautifully crafted</em></h1>
+  <h1 id="hero-heading">Free Online Signature Maker:<br><em>Crafted for You</em></h1>
   <p>Draw, type, or choose a style. Download as PNG instantly — free forever.</p>
 </section>
 
@@ -70,8 +119,8 @@
 
     <!-- TABS -->
     <div class="tabs">
-      <button class="tab active" onclick="switchTab('draw', this)">✍️ Draw</button>
-      <button class="tab" onclick="switchTab('type', this)">⌨️ Type</button>
+      <button class="tab active" type="button" aria-label="Switch to draw signature tab" onclick="switchTab('draw', this)"><span aria-hidden="true">✍️</span> Draw</button>
+      <button class="tab" type="button" aria-label="Switch to type signature tab" onclick="switchTab('type', this)"><span aria-hidden="true">⌨️</span> Type</button>
     </div>
 
     <div class="panels">
@@ -93,49 +142,49 @@
             <div class="color-swatch" style="background:#8b5e3c;" data-color="#8b5e3c" onclick="setColor(this)"></div>
             <div class="color-swatch" style="background:#1a7a4a;" data-color="#1a7a4a" onclick="setColor(this)"></div>
             <div class="color-swatch" style="background:#8b1a1a;" data-color="#8b1a1a" onclick="setColor(this)"></div>
-            <input type="color" id="customColor" value="#1a1a2e" oninput="setCustomColor(this)"
+            <input type="color" id="customColor" value="#1a1a2e" oninput="setCustomColor(this)" aria-label="Pick custom draw color"
               title="Custom color"
               style="width:26px;height:26px;border-radius:50%;border:2px solid var(--line);cursor:pointer;padding:1px;background:none;">
           </div>
           <div class="toolbar-group">
             <span class="toolbar-label">Size</span>
-            <button class="size-btn" style="width:28px;height:28px;" onclick="setSize(1.5, this)">
-              <svg width="6" height="6"><circle cx="3" cy="3" r="3" fill="currentColor"/></svg>
+            <button class="size-btn" type="button" aria-label="Set pen size to small" title="Small pen size" style="width:28px;height:28px;" onclick="setSize(1.5, this)">
+              <svg width="6" height="6" aria-hidden="true"><circle cx="3" cy="3" r="3" fill="currentColor"/></svg>
             </button>
-            <button class="size-btn active" style="width:32px;height:32px;" onclick="setSize(3, this)">
-              <svg width="10" height="10"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg>
+            <button class="size-btn active" type="button" aria-label="Set pen size to medium" title="Medium pen size" style="width:32px;height:32px;" onclick="setSize(3, this)">
+              <svg width="10" height="10" aria-hidden="true"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg>
             </button>
-            <button class="size-btn" style="width:36px;height:36px;" onclick="setSize(5, this)">
-              <svg width="14" height="14"><circle cx="7" cy="7" r="7" fill="currentColor"/></svg>
+            <button class="size-btn" type="button" aria-label="Set pen size to large" title="Large pen size" style="width:36px;height:36px;" onclick="setSize(5, this)">
+              <svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="7" fill="currentColor"/></svg>
             </button>
           </div>
         </div>
 
         <div class="actions">
-          <button class="btn btn-gold" onclick="showDownload('draw')">⬇ Download Signature</button>
-          <button class="btn btn-ghost" onclick="clearCanvas()">✕ Clear</button>
+          <button class="btn btn-gold" type="button" aria-label="Download drawn signature" onclick="showDownload('draw')"><span aria-hidden="true">⬇</span> Download Signature</button>
+          <button class="btn btn-ghost" type="button" aria-label="Clear drawn signature" onclick="clearCanvas()"><span aria-hidden="true">✕</span> Clear</button>
         </div>
 
         <div class="download-opts" id="dl-draw">
           <div class="download-opts-title">Choose format</div>
           <div class="dl-grid">
             <div class="dl-opt" onclick="downloadSig('draw','png-transparent')">
-              <div class="dl-opt-icon">🖼️</div>
+              <div class="dl-opt-icon" aria-hidden="true">🖼️</div>
               <div class="dl-opt-label">PNG</div>
               <div class="dl-opt-desc">Transparent background</div>
             </div>
             <div class="dl-opt" onclick="downloadSig('draw','png-white')">
-              <div class="dl-opt-icon">⬜</div>
+              <div class="dl-opt-icon" aria-hidden="true">⬜</div>
               <div class="dl-opt-label">PNG</div>
               <div class="dl-opt-desc">White background</div>
             </div>
             <div class="dl-opt" onclick="downloadSig('draw','jpg')">
-              <div class="dl-opt-icon">📷</div>
+              <div class="dl-opt-icon" aria-hidden="true">📷</div>
               <div class="dl-opt-label">JPG</div>
               <div class="dl-opt-desc">White background</div>
             </div>
             <div class="dl-opt" onclick="downloadSig('draw','svg')">
-              <div class="dl-opt-icon">✏️</div>
+              <div class="dl-opt-icon" aria-hidden="true">✏️</div>
               <div class="dl-opt-label">SVG</div>
               <div class="dl-opt-desc">Vector format</div>
             </div>
@@ -163,29 +212,29 @@
           <div class="color-swatch" style="background:#8b5e3c;" data-color="#8b5e3c" onclick="setTypeColor(this)"></div>
           <div class="color-swatch" style="background:#1a7a4a;" data-color="#1a7a4a" onclick="setTypeColor(this)"></div>
           <div class="color-swatch" style="background:#8b1a1a;" data-color="#8b1a1a" onclick="setTypeColor(this)"></div>
-          <input type="color" id="typeCustomColor" value="#1a1a2e" oninput="setTypeCustomColor(this)"
+          <input type="color" id="typeCustomColor" value="#1a1a2e" oninput="setTypeCustomColor(this)" aria-label="Pick custom typed signature color"
             style="width:26px;height:26px;border-radius:50%;border:2px solid var(--line);cursor:pointer;padding:1px;background:none;">
         </div>
 
         <div class="actions">
-          <button class="btn btn-gold" onclick="showDownload('type')">⬇ Download Signature</button>
+          <button class="btn btn-gold" type="button" aria-label="Download typed signature" onclick="showDownload('type')"><span aria-hidden="true">⬇</span> Download Signature</button>
         </div>
 
         <div class="download-opts" id="dl-type">
           <div class="download-opts-title">Choose format</div>
           <div class="dl-grid">
             <div class="dl-opt" onclick="downloadSig('type','png-transparent')">
-              <div class="dl-opt-icon">🖼️</div>
+              <div class="dl-opt-icon" aria-hidden="true">🖼️</div>
               <div class="dl-opt-label">PNG</div>
               <div class="dl-opt-desc">Transparent background</div>
             </div>
             <div class="dl-opt" onclick="downloadSig('type','png-white')">
-              <div class="dl-opt-icon">⬜</div>
+              <div class="dl-opt-icon" aria-hidden="true">⬜</div>
               <div class="dl-opt-label">PNG</div>
               <div class="dl-opt-desc">White background</div>
             </div>
             <div class="dl-opt" onclick="downloadSig('type','jpg')">
-              <div class="dl-opt-icon">📷</div>
+              <div class="dl-opt-icon" aria-hidden="true">📷</div>
               <div class="dl-opt-label">JPG</div>
               <div class="dl-opt-desc">White background</div>
             </div>
@@ -197,25 +246,72 @@
   </div>
 </div>
 
+<!-- SEO: educational content -->
+<section class="content-section" aria-labelledby="content-guide-heading">
+  <p id="content-guide-heading" class="content-section-kicker">Digital signatures, explained</p>
+  <p class="content-lead">Whether you need a signature image for documents, email, or design projects, SignCrafty helps you create a clean, professional look in seconds—right in your browser.</p>
+
+  <article class="content-block" id="why-digital-signature">
+    <h2>Why use a digital signature?</h2>
+    <p>A digital signature image saves time compared to scanning pen-on-paper, keeps your look consistent across PDFs and forms, and lets you reuse the same signature wherever you need it. It’s ideal when you want a visible, personal mark—not the same as a legally binding e-sign platform, but perfect for photos, contracts that accept image signatures, presentations, and creative work.</p>
+  </article>
+
+  <article class="content-block" id="how-to-create-digital-signature">
+    <h2>How to Create a Digital Signature Online</h2>
+    <p>SignCrafty helps you build a professional signature image for PDFs, email, contracts, or design work. Use the tool above in three steps:</p>
+    <ol class="content-steps">
+      <li><strong>Draw or type.</strong> On <strong>Draw</strong>, use your mouse, trackpad, or touchscreen for a natural stroke. On <strong>Type</strong>, enter your name and pick an elegant script font that matches your brand.</li>
+      <li><strong>Fine-tune the look.</strong> Choose ink color and, when drawing, line weight so the result fits your documents.</li>
+      <li><strong>Download.</strong> Export as a transparent PNG, JPG, or—when you draw—SVG for a scalable vector file.</li>
+    </ol>
+  </article>
+</section>
+
+<section class="faq-section" aria-labelledby="faq-heading">
+  <h2 id="faq-heading" class="faq-section-title">Frequently asked questions</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <h3>Is SignCrafty free to use?</h3>
+      <p>Yes. SignCrafty is free to use with no signup required and no hidden fees.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is SignCrafty safe? Is my signature stored on your servers?</h3>
+      <p>Your signature is processed in your browser. SignCrafty does not upload your signature to our servers for storage. Downloads are generated locally on your device.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What image formats can I download?</h3>
+      <p>You can download PNG (transparent or white background), JPG (white background), and SVG when you draw your signature (vector format).</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do I need to create an account?</h3>
+      <p>No. You can create and download a signature without registering.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is a signature image the same as a legally binding e-signature?</h3>
+      <p>SignCrafty creates a signature image for documents, email, and design use. It is not the same as a regulated electronic signature service used for legal contracts; check your document requirements.</p>
+    </div>
+  </div>
+</section>
+
 <!-- FEATURES -->
 <section class="features" aria-label="Features">
   <div class="feature">
-    <div class="feature-icon">🔒</div>
+    <div class="feature-icon" aria-hidden="true">🔒</div>
     <div class="feature-title">100% Private</div>
     <div class="feature-desc">Your signature never leaves your browser. Nothing is uploaded to any server.</div>
   </div>
   <div class="feature">
-    <div class="feature-icon">⚡</div>
+    <div class="feature-icon" aria-hidden="true">⚡</div>
     <div class="feature-title">Instant Download</div>
     <div class="feature-desc">PNG, JPG, or SVG — downloaded directly to your device in one click.</div>
   </div>
   <div class="feature">
-    <div class="feature-icon">✨</div>
+    <div class="feature-icon" aria-hidden="true">✨</div>
     <div class="feature-title">Beautiful Fonts</div>
-    <div class="feature-desc">6 handcrafted calligraphy fonts, each with a unique, elegant character.</div>
+    <div class="feature-desc">Five handcrafted calligraphy fonts, each with a unique, elegant character.</div>
   </div>
   <div class="feature">
-    <div class="feature-icon">🎨</div>
+    <div class="feature-icon" aria-hidden="true">🎨</div>
     <div class="feature-title">Custom Colors</div>
     <div class="feature-desc">Choose from presets or pick any custom color with the color picker.</div>
   </div>

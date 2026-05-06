@@ -98,13 +98,23 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- HEADER -->
 <header>
-  <div class="logo">
-    <span class="logo-word">SignCrafty</span>
-    <div class="logo-dot"></div>
+  <div class="header-inner">
+    <a href="index.html" class="logo logo-link" aria-label="SignCrafty — Home">
+      <span class="logo-word">SignCrafty</span>
+      <span class="logo-dot" aria-hidden="true"></span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Signature tool</a>
+      <a href="blog.html">Guides</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <span class="header-badge">Free · No Signup</span>
   </div>
-  <span class="header-badge">Free · No Signup</span>
 </header>
 
 <main id="main-content">
@@ -295,6 +305,26 @@
   </div>
 </section>
 
+<section class="guides-preview" aria-labelledby="guides-heading">
+  <h2 id="guides-heading">Signature guides</h2>
+  <p class="guides-intro">Step-by-step articles on using signature images in real workflows—ideal if you are new to PDFs, transparent PNGs, or choosing a file format.</p>
+  <div class="guide-cards">
+    <article class="guide-card">
+      <h3><a href="articles/add-signature-to-pdf.html">How to add a signature image to a PDF</a></h3>
+      <p>Place your exported PNG into Acrobat, Preview, or browser-based PDF tools without rescanning paperwork.</p>
+    </article>
+    <article class="guide-card">
+      <h3><a href="articles/transparent-png-signature.html">Transparent PNG signatures explained</a></h3>
+      <p>When to use a cut-out signature on letters, slides, and overlays—and how it differs from JPG.</p>
+    </article>
+    <article class="guide-card">
+      <h3><a href="articles/png-jpg-svg-formats.html">PNG vs JPG vs SVG for signatures</a></h3>
+      <p>Pick the right format for email attachments, printing, or scalable branding assets.</p>
+    </article>
+  </div>
+  <p class="guides-more"><a href="blog.html">View all guides</a></p>
+</section>
+
 <!-- FEATURES -->
 <section class="features" aria-label="Features">
   <div class="feature">
@@ -322,11 +352,15 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-copy">© 2026 SignCrafty. Free online signature maker.</div>
-  <div class="footer-links">
-    <a href="#">Privacy</a>
-    <a href="#">How it works</a>
-    <a href="#">About</a>
+  <div class="footer-inner">
+    <div class="footer-copy">© 2026 SignCrafty. Free online signature maker.</div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="blog.html">Guides</a>
+    </nav>
   </div>
 </footer>
 

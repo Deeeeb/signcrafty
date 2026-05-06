@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SignCrafty – Free Online Signature Maker</title>
+<meta name="description" content="Create your perfect digital signature for free. Draw, type, or upload. Download as PNG instantly. No signup required.">
+<meta name="keywords" content="signature maker, digital signature, online signature, free signature, PNG signature, SVG signature, typed signature, e-signature image">
+<meta name="author" content="SignCrafty">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1a1a2e">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="SignCrafty – Free Online Signature Maker">
+<meta property="og:description" content="Create your perfect digital signature for free. Draw, type, or choose a style. Download as PNG, JPG, or SVG instantly. No signup required.">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="SignCrafty">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SignCrafty – Free Online Signature Maker">
+<meta name="twitter:description" content="Create your perfect digital signature for free. Draw, type, or choose a style. Download instantly — no signup.">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@400;600;700&family=Great+Vibes&family=Pinyon+Script&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SignCrafty",
+  "description": "Free online signature maker. Draw or type your signature and download as PNG, JPG, or SVG. Runs entirely in your browser.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": "Draw signature; type signature with fonts; PNG, JPG, and SVG export; private browser-only processing"
+}
+</script>
+
+<script src="main.js" defer></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <span class="logo-word">SignCrafty</span>
+    <div class="logo-dot"></div>
+  </div>
+  <span class="header-badge">Free · No Signup</span>
+</header>
+
+<main id="main-content">
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-eyebrow">Online Signature Maker</div>
+  <h1 id="hero-heading">Your signature,<br><em>beautifully crafted</em></h1>
+  <p>Draw, type, or choose a style. Download as PNG instantly — free forever.</p>
+</section>
+
+<!-- MAIN TOOL CARD -->
+<div class="card">
+  <div class="tool-box">
+
+    <!-- TABS -->
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('draw', this)">✍️ Draw</button>
+      <button class="tab" onclick="switchTab('type', this)">⌨️ Type</button>
+    </div>
+
+    <div class="panels">
+
+      <!-- DRAW PANEL -->
+      <div class="panel active" id="panel-draw">
+        <div class="canvas-wrap">
+          <div class="canvas-lines"></div>
+          <div class="baseline"></div>
+          <canvas id="sigCanvas"></canvas>
+          <div class="canvas-hint" id="canvasHint">Sign here…</div>
+        </div>
+
+        <div class="draw-toolbar">
+          <div class="toolbar-group">
+            <span class="toolbar-label">Color</span>
+            <div class="color-swatch active" style="background:#1a1a2e;" data-color="#1a1a2e" onclick="setColor(this)"></div>
+            <div class="color-swatch" style="background:#1a56a0;" data-color="#1a56a0" onclick="setColor(this)"></div>
+            <div class="color-swatch" style="background:#8b5e3c;" data-color="#8b5e3c" onclick="setColor(this)"></div>
+            <div class="color-swatch" style="background:#1a7a4a;" data-color="#1a7a4a" onclick="setColor(this)"></div>
+            <div class="color-swatch" style="background:#8b1a1a;" data-color="#8b1a1a" onclick="setColor(this)"></div>
+            <input type="color" id="customColor" value="#1a1a2e" oninput="setCustomColor(this)"
+              title="Custom color"
+              style="width:26px;height:26px;border-radius:50%;border:2px solid var(--line);cursor:pointer;padding:1px;background:none;">
+          </div>
+          <div class="toolbar-group">
+            <span class="toolbar-label">Size</span>
+            <button class="size-btn" style="width:28px;height:28px;" onclick="setSize(1.5, this)">
+              <svg width="6" height="6"><circle cx="3" cy="3" r="3" fill="currentColor"/></svg>
+            </button>
+            <button class="size-btn active" style="width:32px;height:32px;" onclick="setSize(3, this)">
+              <svg width="10" height="10"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg>
+            </button>
+            <button class="size-btn" style="width:36px;height:36px;" onclick="setSize(5, this)">
+              <svg width="14" height="14"><circle cx="7" cy="7" r="7" fill="currentColor"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-gold" onclick="showDownload('draw')">⬇ Download Signature</button>
+          <button class="btn btn-ghost" onclick="clearCanvas()">✕ Clear</button>
+        </div>
+
+        <div class="download-opts" id="dl-draw">
+          <div class="download-opts-title">Choose format</div>
+          <div class="dl-grid">
+            <div class="dl-opt" onclick="downloadSig('draw','png-transparent')">
+              <div class="dl-opt-icon">🖼️</div>
+              <div class="dl-opt-label">PNG</div>
+              <div class="dl-opt-desc">Transparent background</div>
+            </div>
+            <div class="dl-opt" onclick="downloadSig('draw','png-white')">
+              <div class="dl-opt-icon">⬜</div>
+              <div class="dl-opt-label">PNG</div>
+              <div class="dl-opt-desc">White background</div>
+            </div>
+            <div class="dl-opt" onclick="downloadSig('draw','jpg')">
+              <div class="dl-opt-icon">📷</div>
+              <div class="dl-opt-label">JPG</div>
+              <div class="dl-opt-desc">White background</div>
+            </div>
+            <div class="dl-opt" onclick="downloadSig('draw','svg')">
+              <div class="dl-opt-icon">✏️</div>
+              <div class="dl-opt-label">SVG</div>
+              <div class="dl-opt-desc">Vector format</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TYPE PANEL -->
+      <div class="panel" id="panel-type">
+        <div class="type-input-wrap">
+          <input type="text" id="typeInput" placeholder="Type your name…" oninput="updateTypePreview()" maxlength="40">
+        </div>
+
+        <div class="font-grid" id="fontGrid"></div>
+
+        <div class="type-preview-wrap">
+          <div class="baseline"></div>
+          <div id="typedSig" style="font-family:'Dancing Script',cursive;">Your Name</div>
+        </div>
+
+        <div class="type-color-row">
+          <span class="toolbar-label">Color</span>
+          <div class="color-swatch active" style="background:#1a1a2e;" data-color="#1a1a2e" onclick="setTypeColor(this)"></div>
+          <div class="color-swatch" style="background:#1a56a0;" data-color="#1a56a0" onclick="setTypeColor(this)"></div>
+          <div class="color-swatch" style="background:#8b5e3c;" data-color="#8b5e3c" onclick="setTypeColor(this)"></div>
+          <div class="color-swatch" style="background:#1a7a4a;" data-color="#1a7a4a" onclick="setTypeColor(this)"></div>
+          <div class="color-swatch" style="background:#8b1a1a;" data-color="#8b1a1a" onclick="setTypeColor(this)"></div>
+          <input type="color" id="typeCustomColor" value="#1a1a2e" oninput="setTypeCustomColor(this)"
+            style="width:26px;height:26px;border-radius:50%;border:2px solid var(--line);cursor:pointer;padding:1px;background:none;">
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-gold" onclick="showDownload('type')">⬇ Download Signature</button>
+        </div>
+
+        <div class="download-opts" id="dl-type">
+          <div class="download-opts-title">Choose format</div>
+          <div class="dl-grid">
+            <div class="dl-opt" onclick="downloadSig('type','png-transparent')">
+              <div class="dl-opt-icon">🖼️</div>
+              <div class="dl-opt-label">PNG</div>
+              <div class="dl-opt-desc">Transparent background</div>
+            </div>
+            <div class="dl-opt" onclick="downloadSig('type','png-white')">
+              <div class="dl-opt-icon">⬜</div>
+              <div class="dl-opt-label">PNG</div>
+              <div class="dl-opt-desc">White background</div>
+            </div>
+            <div class="dl-opt" onclick="downloadSig('type','jpg')">
+              <div class="dl-opt-icon">📷</div>
+              <div class="dl-opt-label">JPG</div>
+              <div class="dl-opt-desc">White background</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features" aria-label="Features">
+  <div class="feature">
+    <div class="feature-icon">🔒</div>
+    <div class="feature-title">100% Private</div>
+    <div class="feature-desc">Your signature never leaves your browser. Nothing is uploaded to any server.</div>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">⚡</div>
+    <div class="feature-title">Instant Download</div>
+    <div class="feature-desc">PNG, JPG, or SVG — downloaded directly to your device in one click.</div>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">✨</div>
+    <div class="feature-title">Beautiful Fonts</div>
+    <div class="feature-desc">6 handcrafted calligraphy fonts, each with a unique, elegant character.</div>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">🎨</div>
+    <div class="feature-title">Custom Colors</div>
+    <div class="feature-desc">Choose from presets or pick any custom color with the color picker.</div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">© 2026 SignCrafty. Free online signature maker.</div>
+  <div class="footer-links">
+    <a href="#">Privacy</a>
+    <a href="#">How it works</a>
+    <a href="#">About</a>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+</body>
+</html>

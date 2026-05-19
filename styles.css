@@ -1298,6 +1298,19 @@
     color: var(--ink);
   }
 
+  .footer-hits {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 4px;
+  }
+
+  .footer-hits img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
   .footer-links {
     display: flex;
     gap: 20px;
